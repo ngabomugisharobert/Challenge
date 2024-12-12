@@ -6,4 +6,5 @@ import com.robert.challenge.data.remote.ApiResult
 
 interface FlickrRepository {
     suspend fun searchPhotos(tags: String): ApiResult<List<PhotoModel>>
+    suspend fun fetchPhotos(): ApiResult<List<PhotoModel>>
 }

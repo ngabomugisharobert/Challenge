@@ -70,7 +70,7 @@ fun HomeScreen(
 
                 is ApiResult.Loading -> {
                     Column(modifier = Modifier.fillMaxSize()) {
-                        LottieAnimationComponent(modifier = Modifier, R.raw.animatedloading)
+                        LottieAnimationComponent(modifier = Modifier, R.raw.animatedloading, true)
                     }
                 }
 
@@ -100,7 +100,9 @@ fun HomeScreen(
 
                 ApiResult.Idle -> {
                     Box(modifier = Modifier) {
-                        Text("Search for photos")
+                        Column(modifier = Modifier.fillMaxSize()) {
+                            LottieAnimationComponent(modifier = Modifier, R.raw.animatedloading, false)
+                        }
                     }
                 }
             }

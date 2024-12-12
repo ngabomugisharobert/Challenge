@@ -14,4 +14,11 @@ class RepositoryImpl @Inject constructor(private val apiService: FlickrAPIServic
             response.items
         }
     }
+
+    override suspend fun fetchPhotos(): ApiResult<List<PhotoModel>> {
+        return safeApiCallWithRetry(maxRetries = 3, initialDelayMillis = 1000) {
+            val response = apiService.fetchPhotos()
+            response.items
+        }
+    }
 }

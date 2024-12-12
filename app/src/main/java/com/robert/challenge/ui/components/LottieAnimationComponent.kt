@@ -12,15 +12,17 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.airbnb.lottie.compose.LottieAnimation
 import com.airbnb.lottie.compose.LottieCompositionSpec
 import com.airbnb.lottie.compose.LottieConstants
 import com.airbnb.lottie.compose.animateLottieCompositionAsState
 import com.airbnb.lottie.compose.rememberLottieComposition
+import com.robert.challenge.R
 
 @Composable
-fun LottieAnimationComponent(modifier: Modifier, drawableRes: Int) {
+fun LottieAnimationComponent(modifier: Modifier, drawableRes: Int, play: Boolean) {
     // Load the Lottie animation from the raw resource
     Box(
         modifier.fillMaxSize(),
@@ -30,11 +32,11 @@ fun LottieAnimationComponent(modifier: Modifier, drawableRes: Int) {
             spec = LottieCompositionSpec.RawRes(drawableRes)
         )
         var isPlaying by remember {
-            mutableStateOf(true)
+            mutableStateOf(play)
         }
         val progress by animateLottieCompositionAsState(
             composition = composition,
-            isPlaying = isPlaying,
+            isPlaying = play,
             iterations = LottieConstants.IterateForever,
             speed = 1.0f
         )
@@ -51,7 +53,7 @@ fun LottieAnimationComponent(modifier: Modifier, drawableRes: Int) {
             composition = composition,
             modifier = modifier.size(200.dp)
                 .clickable {
-                    isPlaying = true
+                    isPlaying = isPlaying
                 },
             //iterations = LottieConstants.IterateForever
             progress = {
@@ -59,4 +61,10 @@ fun LottieAnimationComponent(modifier: Modifier, drawableRes: Int) {
             }
         )
     }
+}
+
+@Preview
+@Composable
+fun LottieAnimationComponentPreview() {
+    LottieAnimationComponent(modifier = Modifier, drawableRes = R.raw.animatedloading, play = true)
 }

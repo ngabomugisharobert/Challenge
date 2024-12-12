@@ -3,6 +3,7 @@ package com.robert.challenge.ui.components
 import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.Box
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import com.robert.challenge.data.model.PhotoModel
@@ -14,7 +15,10 @@ fun ImageCard(modifier: Modifier = Modifier, photo: PhotoModel) {
 //    get context
     val context = LocalContext.current
 
-    Box(modifier = modifier)
+    Box(
+        modifier = modifier,
+        contentAlignment = Alignment.Center
+    )
     {
         ImageFromUrl(
             url = photo.media.m,

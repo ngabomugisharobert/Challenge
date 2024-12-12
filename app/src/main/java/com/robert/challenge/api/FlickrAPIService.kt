@@ -13,4 +13,9 @@ interface FlickrAPIService {
             @Query("tags") tags: String
         ): ResponseModel
 
+        @GET("services/feeds/photos_public.gne?format=json&nojsoncallback=1")
+        suspend fun fetchPhotos(
+//            @Query("format") format: String = "json",
+//            @Query("nojsoncallback") noJsonCallback: Int = 1
+        ): ResponseModel
 }

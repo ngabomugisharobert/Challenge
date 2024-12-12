@@ -66,12 +66,18 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation( libs.lottie.compose)
     implementation(libs.androidx.material3)
+    implementation(libs.androidx.junit.ktx)
+
     testImplementation(libs.junit)
     testImplementation(libs.junit.junit)
+
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.ui.test.junit4)
+    androidTestImplementation(libs.androidx.ui.test.manifest)
+    androidTestImplementation(libs.androidx.ui.test.junit4)
+
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
@@ -111,8 +117,6 @@ dependencies {
 
 
 //    testing
-    testImplementation("com.squareup.okhttp3:mockwebserver:4.9.3")
-    androidTestImplementation("com.squareup.okhttp3:mockwebserver:4.9.3")
     testImplementation("io.mockk:mockk:1.13.7")
     androidTestImplementation("io.mockk:mockk-android:1.13.7")
     testImplementation ("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
@@ -130,4 +134,10 @@ dependencies {
     testImplementation(libs.kotlinx.coroutines.test)
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4")
     testImplementation(libs.junit)
+
+    androidTestImplementation ("androidx.test.espresso:espresso-core:3.5.1")
+    androidTestImplementation ("androidx.test.espresso:espresso-contrib:3.5.1")
+    androidTestImplementation ("androidx.navigation:navigation-testing:2.7.3")
+    androidTestImplementation ("androidx.compose.ui:ui-test-junit4")
+
 }

@@ -42,6 +42,18 @@ class FlickrViewModel @Inject constructor(private val flickrRepository: FlickrRe
         _selectedPhoto.value = photo
     }
 
+    // Function to fetch photos
+    private fun fetchPhotos() {
+        _photos.value = ApiResult.Loading ?: ApiResult.Idle
+        viewModelScope.launch {
+            try {
+                _photos.value = flickrRepository.fetchPhotos() ?: ApiResult.Error(Exception("Null Data Returned"))
+            } catch (e: Exception) {
+                _photos.value = ApiResult.Error(e)
+            }
+        }
+    }
+
     // Clear the selected photo if necessary
     fun clearSelectedPhoto() {
         _selectedPhoto.value = null
