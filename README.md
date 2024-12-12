@@ -35,3 +35,4 @@ The full image.
 Clone the repository.
 Open the project in Android Studio.
 Build and run on an emulator or physical device.
+

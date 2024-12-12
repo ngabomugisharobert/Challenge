@@ -28,6 +28,6 @@ fun ImageFromUrl(modifier: Modifier = Modifier, url: String, contentDescription:
             .padding(0.dp)
             .clip(RoundedCornerShape(10.dp)),
         contentScale = ContentScale.Crop,
-        placeholder = painterResource(R.drawable.avator),
+        placeholder = painterResource(R.drawable.unnamed),
     )
 }
