@@ -1,7 +1,9 @@
 # Flickr Image Search App
 This repository contains a simple Android application designed as part of a coding challenge. The app enables users to search for images from Flickr's public API and provides an interactive user experience.
 
-### Features
+<p style="display: flex; justify-content: space-evenly;"> <img src="https://raw.githubusercontent.com/ngabomugisharobert/Challenge/refs/heads/main/HOME.png" alt="alt text" width="120" height="250"> <img src="https://raw.githubusercontent.com/ngabomugisharobert/Challenge/refs/heads/main/SEARCH.png" alt="alt text" width="120" height="250"> <img src="https://raw.githubusercontent.com/ngabomugisharobert/Challenge/refs/heads/main/DETAILS.png" alt="alt text" width="120" height="250"> <img src="https://raw.githubusercontent.com/ngabomugisharobert/Challenge/refs/heads/main/SHARE.png" alt="alt text" width="120" height="250"> </p>
+
+## Features
 
 #### Search Functionality:
 
@@ -27,11 +29,13 @@ The full image.
 - unit test to validate core functionality.
 
 #### Extra Credit Features (Optional)
+
 - Accessibility support (TalkBack, large fonts).
 - Share functionality for images and metadata.
 - Landscape mode support.
 
 ### Running the App
+
 Clone the repository.
 Open the project in Android Studio.
 Build and run on an emulator or physical device.
